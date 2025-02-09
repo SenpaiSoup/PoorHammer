@@ -36,6 +36,9 @@
     <ClCompile Include="src\Source\Core\DiscordAPI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Source\Commands\PingCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyBot.h">
@@ -336,6 +339,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Headers\Enums\BotStatusEnum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Headers\Commands\PingCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
