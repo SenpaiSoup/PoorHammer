@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "DiscordAPI.h"
+#include "PingCommand.h"
 
 class Bot
 {

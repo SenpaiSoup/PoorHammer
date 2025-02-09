@@ -18,6 +18,10 @@ Bot* Bot::Instance()
 bool Bot::Initialize()
 {
 	DiscordAPI::Instance()->ClearCommands();
+
+	//Registering commands
+	DiscordAPI::Instance()->RegisterCommand(std::make_shared<PingCommand>(PingCommand()));
+
 	DiscordAPI::Instance()->Initialize();
 	DiscordAPI::Instance()->StartLogger();
 
