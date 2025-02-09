@@ -4,6 +4,7 @@
 
 #include "DiscordAPI.h"
 #include "PingCommand.h"
+#include "PongCommand.h"
 
 class Bot
 {

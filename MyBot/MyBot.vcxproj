@@ -192,6 +192,7 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="src\Source\Commands\PingCommand.cpp" />
+    <ClCompile Include="src\Source\Commands\PongCommand.cpp" />
     <ClCompile Include="src\Source\Core\Bot.cpp" />
     <ClCompile Include="src\Source\Core\DiscordAPI.cpp" />
   </ItemGroup>
@@ -292,6 +293,7 @@
     <ClInclude Include="src\Headers\Buttons\IButtonInteraction.h" />
     <ClInclude Include="src\Headers\Commands\ICommand.h" />
     <ClInclude Include="src\Headers\Commands\PingCommand.h" />
+    <ClInclude Include="src\Headers\Commands\PongCommand.h" />
     <ClInclude Include="src\Headers\Core\Bot.h" />
     <ClInclude Include="src\Headers\Core\DiscordAPI.h" />
     <ClInclude Include="src\Headers\Enums\BotActivityEnum.h" />

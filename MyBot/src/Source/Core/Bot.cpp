@@ -21,6 +21,7 @@ bool Bot::Initialize()
 
 	//Registering commands
 	DiscordAPI::Instance()->RegisterCommand(std::make_shared<PingCommand>(PingCommand()));
+	DiscordAPI::Instance()->RegisterCommand(std::make_shared<PongCommand>(PongCommand()));
 
 	DiscordAPI::Instance()->Initialize();
 	DiscordAPI::Instance()->StartLogger();
