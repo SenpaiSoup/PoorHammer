@@ -344,5 +344,8 @@
     <ClInclude Include="src\Headers\Commands\PingCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Headers\Timers\ITimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

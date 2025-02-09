@@ -23,6 +23,10 @@ private:
 	void RemoveGuilmemberRole(dpp::guild_member _member, dpp::snowflake _roleID);
 	void SetStatus(BotStatus _Status, BotActivity _Activity, std::string _Message);
 
+	//Timers
+	bool Addtimer(std::shared_ptr<ITimer> _Timer);
+	void StopTimer(int _ID);
+
 	std::string GetGlobalName();
 	std::string GetLocalName();
 	std::string GetAvatarURL();
@@ -46,6 +50,7 @@ private:
 	std::vector<dpp::slashcommand> m_DPPCommands;
 	std::vector<std::shared_ptr<IMessageListner>> m_Listners;
 	std::vector<std::shared_ptr<IButtonInteraction>> m_Buttons;
+	std::vector<std::shared_ptr<ITimer>> m_Timers;
 
 	//D++ variables
 private:
@@ -150,6 +155,32 @@ void DiscordAPI::DiscordAPIImpl::SetStatus(BotStatus _Status, BotActivity _Activ
 	m_BotCluster.set_presence(dpp::presence(status, activity, _Message));
 }
 
+bool DiscordAPI::DiscordAPIImpl::Addtimer(std::shared_ptr<ITimer> _Timer)
+{
+	for (auto& timer : m_Timers)
+	{
+		if (timer->m_ID == _Timer->m_ID)
+		{
+			m_Timers.push_back(_Timer);
+			return false;
+		}
+	}
+
+	m_BotCluster.start_timer([_Timer](const dpp::timer& timer) { _Timer->m_Function(); }, _Timer->m_Timing);
+	return true;
+}
+
+void DiscordAPI::DiscordAPIImpl::StopTimer(int _ID)
+{
+	for (auto& timer : m_Timers)
+	{
+		if (timer->m_ID == _ID)
+		{
+			m_BotCluster.stop_timer(timer->m_ID);
+			return;
+		}
+	}
+}
 
 std::string DiscordAPI::DiscordAPIImpl::GetGlobalName()
 {
@@ -318,6 +349,16 @@ void DiscordAPI::SetStatus(BotStatus _Status, BotActivity _Activity, std::string
 void DiscordAPI::ClearCommands()
 {
 	m_DiscordAPIImpl->Clearcommands();
+}
+
+bool DiscordAPI::Addtimer(std::shared_ptr<ITimer> _Timer)
+{
+	return m_DiscordAPIImpl->Addtimer(std::move(_Timer));
+}
+
+void DiscordAPI::StopTimer(int _ID)
+{
+	m_DiscordAPIImpl->StopTimer(_ID);
 }
 
 std::string DiscordAPI::GetGlobalName()

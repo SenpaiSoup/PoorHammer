@@ -6,6 +6,7 @@
 #include <map>
 
 #include "ICommand.h"
+#include "ITimer.h"
 #include "IMessageListner.h"
 #include "IButtonInteraction.h"
 
@@ -31,6 +32,10 @@ public:
 	bool RegisterCommand(std::shared_ptr<ICommand> _Command);
 	bool RegisterMessageListner(std::shared_ptr<IMessageListner> _Listner);
 	void ClearCommands();
+
+	//Timers
+	bool Addtimer(std::shared_ptr<ITimer> _Timer);
+	void StopTimer(int _ID);
 
 	//Misc
 	bool RegisterButton(std::shared_ptr<IButtonInteraction> _Button);

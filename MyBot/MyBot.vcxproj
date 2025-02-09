@@ -148,7 +148,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalOptions>/wd4251 /utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\MyBot\src\Headers\Enums;$(SolutionDir)\MyBot\src\Headers\Buttons;$(SolutionDir)\MyBot\src\Headers\Listners;$(SolutionDir)\MyBot\src\Headers\Commands;$(SolutionDir)\MyBot\src\Headers\Core</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\MyBot\src\Headers\Timers;$(SolutionDir)\MyBot\src\Headers\Enums;$(SolutionDir)\MyBot\src\Headers\Buttons;$(SolutionDir)\MyBot\src\Headers\Listners;$(SolutionDir)\MyBot\src\Headers\Commands;$(SolutionDir)\MyBot\src\Headers\Core</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -173,7 +173,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalOptions>/wd4251 /utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\MyBot\src\Headers\Enums;$(SolutionDir)\MyBot\src\Headers\Buttons;$(SolutionDir)\MyBot\src\Headers\Listners;$(SolutionDir)\MyBot\src\Headers\Commands;$(SolutionDir)\MyBot\src\Headers\Core</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\MyBot\src\Headers\Timers;$(SolutionDir)\MyBot\src\Headers\Enums;$(SolutionDir)\MyBot\src\Headers\Buttons;$(SolutionDir)\MyBot\src\Headers\Listners;$(SolutionDir)\MyBot\src\Headers\Commands;$(SolutionDir)\MyBot\src\Headers\Core</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -297,6 +297,7 @@
     <ClInclude Include="src\Headers\Enums\BotActivityEnum.h" />
     <ClInclude Include="src\Headers\Enums\BotStatusEnum.h" />
     <ClInclude Include="src\Headers\Listners\IMessageListner.h" />
+    <ClInclude Include="src\Headers\Timers\ITimer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
