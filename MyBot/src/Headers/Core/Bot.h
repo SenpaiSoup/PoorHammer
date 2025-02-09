@@ -2,6 +2,7 @@
 
 #include <memory>
 
+#include "DiscordAPI.h"
 
 class Bot
 {

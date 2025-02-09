@@ -17,11 +17,16 @@ Bot* Bot::Instance()
 
 bool Bot::Initialize()
 {
+	DiscordAPI::Instance()->ClearCommands();
+	DiscordAPI::Instance()->Initialize();
+	DiscordAPI::Instance()->StartLogger();
+
 	return false;
 }
 
 bool Bot::Run()
 {
+	DiscordAPI::Instance()->Start();
 	return false;
 }
 
